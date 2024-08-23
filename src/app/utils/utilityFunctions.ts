@@ -6,16 +6,18 @@ export const isEmpty = (value: string | undefined | null) => {
 
 export const getConnectorClass = (connectorType: string | undefined) => {
   switch (connectorType) {
-    case "mysql":
-      return "io.debezium.connector.mysql.MySqlConnector";
-    case "postgres":
-      return "io.debezium.connector.postgresql.PostgresConnector";
+    case "informix":
+      return "io.debezium.connector.informix.InformixConnector";
     case "mongodb":
       return "io.debezium.connector.mongodb.MongoDbConnector";
-    case "sqlserver":
-      return "io.debezium.connector.sqlserver.SqlServerConnector";
+    case "mysql":
+      return "io.debezium.connector.mysql.MySqlConnector";
     case "oracle":
       return "io.debezium.connector.oracle.OracleConnector";
+    case "postgres":
+      return "io.debezium.connector.postgresql.PostgresConnector";
+    case "sqlserver":
+      return "io.debezium.connector.sqlserver.SqlServerConnector";
     default:
       return "";
   }
@@ -23,16 +25,18 @@ export const getConnectorClass = (connectorType: string | undefined) => {
 
 export const getConnectorType = (connectorType: string | undefined) => {
   switch (connectorType) {
-    case "io.debezium.connector.mysql.MySqlConnector":
-      return "mysql";
-    case "io.debezium.connector.postgresql.PostgresConnector":
-      return "postgres";
+    case "io.debezium.connector.informix.InformixConnector":
+      return "informix";
     case "io.debezium.connector.mongodb.MongoDbConnector":
       return "mongodb";
-    case "io.debezium.connector.sqlserver.SqlServerConnector":
-      return "sqlserver";
+    case "io.debezium.connector.mysql.MySqlConnector":
+      return "mysql";
     case "io.debezium.connector.oracle.OracleConnector":
       return "oracle";
+    case "io.debezium.connector.postgresql.PostgresConnector":
+      return "postgres";
+    case "io.debezium.connector.sqlserver.SqlServerConnector":
+      return "sqlserver";
     default:
       return "";
   }
